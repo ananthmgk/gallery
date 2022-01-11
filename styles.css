@@ -2,7 +2,52 @@
     box-sizing: border-box;
 }
 
+#cointainer {
+    position: relative;
+}
+
 #button-container button {
+    cursor: pointer;
+}
+
+#left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 40px;
+    filter: grayscale(100%);
+}
+
+button  #left-arrow:hover {
+    filter: grayscale(0);
+    border: solid red 2px;
+}
+
+#right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 40px;
+}
+
+#zoom-plus {
+    position: absolute;
+    right: 45%;
+    font-size: 30px;
+}
+
+#zoom-minus {
+    position: relative;
+    left: 35%;
+    font-size: 30px;
+}
+
+.hideBtn {
+    display: none;
+}
+
+.showBtn {
+    display: inline;
     font-size: 40px;
     cursor: pointer;
 }
