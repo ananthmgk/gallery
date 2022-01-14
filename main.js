@@ -5,55 +5,57 @@ const image4 = "https://images.pexels.com/photos/1191710/pexels-photo-1191710.jp
 const image5 = "https://images.pexels.com/photos/1532771/pexels-photo-1532771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
 const imageList = [image1,image2,image3,image4,image5];
 let i = 0;
-let display = imageList[0];
 
 document.addEventListener("DOMContentLoaded", function(){
-    document.querySelector('.right-arrow').addEventListener("click", ()=>{
-        if(display >= imageList[imageList.length]) {
-            next.classList.add('hideBtn');
-        } else if (display === imageList[4]) {
-            next.classList.remove('hideBtn');
-        } else {
-            i++;
-            display = imageList[i];
-            document.querySelector('img').src= display;
+    const nextBtn = document.getElementById('nextBtn');
+    const previousBtn = document.getElementById('previousBtn');
+
+    nextBtn.addEventListener("click", ()=>{
+        i++;
+        document.getElementById('image').src = imageList[i];
+        if (i === imageList.length - 1) {
+            nextBtn.style.display = 'none';
+        }
+
+        if (i === 1) {
+            previousBtn.style.display = 'inline';
         }
     });
     
-    // previous
-    document.querySelector('.left-arrow').addEventListener("click", ()=>{
+    previousBtn.addEventListener("click", ()=>{
         i--;
-        display = imageList[i];
-        document.querySelector('img').src= display;
-        if(display === imageList[0]) {
-            previous.classList.add('hideBtn');
-        } else if (display === imageList[1]) {
-            previous.classList.remove('hideBtn');
-        };
+        document.getElementById('image').src = imageList[i];
+        if (i === 0) {
+            previousBtn.style.display = 'none';
+        }
+
+        if (i === imageList.length - 2) {
+            nextBtn.style.display = 'inline';
+        }
     });
     
-    document.querySelector('#btn1').addEventListener('click', () => {
-        document.querySelector('img').src = image1;
+    document.getElementById('btn1').addEventListener('click', () => {
+        document.getElementById('image').src = image1;
         i = 0;
     });
     
-    document.querySelector('#btn2').addEventListener('click', () => {
-        document.querySelector('img').src = image2;
+    document.getElementById('btn2').addEventListener('click', () => {
+        document.getElementById('image').src = image2;
         i = 1;
     });
     
-    document.querySelector('#btn3').addEventListener('click', () => {
-        document.querySelector('img').src = image3;
+    document.getElementById('btn3').addEventListener('click', () => {
+        document.getElementById('image').src = image3;
         i = 2;
     });
     
-    document.querySelector('#btn4').addEventListener('click', () => {
-        document.querySelector('img').src = image4;
+    document.getElementById('btn4').addEventListener('click', () => {
+        document.getElementById('image').src = image4;
         i = 3;
     });
     
-    document.querySelector('#btn5').addEventListener('click', () => {
-        document.querySelector('img').src = image5;
+    document.getElementById('btn5').addEventListener('click', () => {
+        document.getElementById('image').src = image5;
         i = 4;
     });
 
