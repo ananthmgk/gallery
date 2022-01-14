@@ -18,9 +18,9 @@
     filter: grayscale(100%);
 }
 
-button  #left-arrow:hover {
+button  .left-arrow:hover {
     filter: grayscale(0);
-    border: solid red 2px;
+    border: solid red 5px;
 }
 
 #right-arrow {
