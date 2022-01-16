@@ -10,45 +10,35 @@
     cursor: pointer;
 }
 
-#left-arrow {
+.left-arrow {
     position: absolute;
     top: 50%;
     left: 0;
     font-size: 40px;
-    filter: grayscale(100%);
+    cursor: pointer;
 }
 
-button  .left-arrow:hover {
-    filter: grayscale(0);
-    border: solid red 5px;
-}
-
-#right-arrow {
+.right-arrow {
     position: absolute;
     top: 50%;
     right: 0;
     font-size: 40px;
+    cursor: pointer;
 }
 
-#zoom-plus {
-    position: absolute;
-    right: 45%;
+.zoom-in {
+    position: fixed;
+    top: 90vh;
+    right: 40%;
     font-size: 30px;
+    cursor: pointer;
 }
 
-#zoom-minus {
-    position: relative;
-    left: 35%;
+.zoom-out {
+    position: fixed;
+    top: 90vh;
+    left: 40%;
     font-size: 30px;
-}
-
-.hideBtn {
-    display: none;
-}
-
-.showBtn {
-    display: inline;
-    font-size: 40px;
     cursor: pointer;
 }
 
@@ -63,14 +53,6 @@ img {
     width: 90vw;
     height: 80vh;
     margin: auto;
+    margin-top: 40px;
 }
 
-div #buttons {
-    text-align: center;
-    margin-top: 10px;
-}
-
-#buttons button {
-    border-radius: 50%;
-    cursor: pointer;
-}
